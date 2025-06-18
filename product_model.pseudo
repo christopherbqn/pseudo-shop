@@ -29,7 +29,14 @@ function add_product(name, width, height, length, weight, color, brand):
 #Parameter: filters(a dictionary where keys attributes and values are user's desired values)
 function filter_products(filters):
     filtered_list = []
-    # Placeholder for filtering logic
+    for each product in product_list:
+        match = true
+        for each filter_key, filter_value in filters:
+            if product.get(filter_key) is not filter_value:
+                match = false
+                break
+        if match is true:
+            add product to filtered_list
     return filtered_list
 
 

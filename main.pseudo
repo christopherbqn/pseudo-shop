@@ -6,6 +6,37 @@
 # Run the app
 print "Welcome to the Pseudo Shop!"
 
+#For tracking the current logged_in 
+current_user = null
+
+# Login page for logging in and storing the logged user
+function login_page():
+    print "=================== LOGIN PAGE ========================== "
+    print "1. Login"
+    print "2. Register"
+    choice = read input
+
+    if choice is "1":
+        # Prompting the user to login
+        print "Enter user email"
+        email_input = read input
+        print "Enter password"
+        password_input = read input
+        
+        if login_user(email_input, password_input):
+            current_user = email_input #Setting the logged in user for successfull login
+            return
+    if choice is "2":
+        while current_user is null:
+            #Prompting the user to register
+            name_input = read input
+            email_input = read input
+            password = read input
+            
+            if create_user(name_input, email_input, password_input):
+                current_user = email_input
+                return
+            
 
 # Handling adding new product
 function handle_add_product():
@@ -19,5 +50,4 @@ function handle_add_product():
     brand = read input("Enter Brand: ")
 
     add_product(name, width, height, length, weight, color, brand)    
-
 

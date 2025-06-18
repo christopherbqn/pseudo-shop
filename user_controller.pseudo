@@ -4,3 +4,34 @@
 # function create_user(name, email, password)
 # function login_user(email, password)
 
+# Handles user-related logic such as registration and login
+
+# In-memory list to store user data
+user_database = []
+
+# Function to create a new user and add to the user_database.
+# Parameters: name (string), email (string), password (string).
+function create_user(name, email, password):
+    # pseudo-check for existing email
+    for each user in user_database:
+        if user.email is email:
+            print "Error: User with this email already exists."
+            return
+    
+    new_user = {
+        name: name,
+        email: email,
+        password: password
+    }
+    add new_user to user_database
+    print "User created: " + name + " (" + email + ")"
+
+function login_user(email, password):
+    for each user in user_database:
+        if user.email is email and user.password is password:
+            print "Login: Success!"
+            return true
+    print "Login: Failed!"
+    print "Message: Invalid email or password"
+    return false
+

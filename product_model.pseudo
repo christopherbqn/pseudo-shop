@@ -4,7 +4,7 @@
 product_list = []
 
 # Function to add new products to list 
-function add_product(name, width, height, length, weight, color, brand):
+function add_product(name, price, width, height, length, weight, color, brand):
 
     # Check for existing products by name
     for product in product_list:
@@ -14,6 +14,7 @@ function add_product(name, width, height, length, weight, color, brand):
 
     new_product ={
         name: name,
+        price: price, 
         width: width,
         height: height, 
         length: length,

@@ -1,10 +1,33 @@
 # Main entry point
+# For tracking the current logged_in 
+current_user = null
 
-# This file ties together all components of the pseudo-shop
-# Feel free to modify this to simulate application flow
+# Main Store Menu 
+function store_menu():
+    while true:
+        print "\n========= Psuedo Shop Menu ========="
+        print "1. Browse All Products"
+        print "2. Filter Products"
+        print "3. Add Product"
+        print "4. Logout"
+        print "5. Exit"
+        
+        choice = read input("Enter your choice: ")
 
-# Run the app
-print "Welcome to the Pseudo Shop!"
+        if choice is "1":
+            display_products()
+        else if choice is "2":
+            display_filtered_products()
+        else if choice is "3":
+            handle_add_product()
+        else if choice is "4":
+            current_user = null
+            print "You have been logged out."
+            return  # Go back to login
+        else if choice is "5":
+            exit
+        else:
+            print "Invalid choice. Please try again."
 
 #For tracking the current logged_in 
 current_user = null
@@ -38,9 +61,38 @@ function login_page():
                 return
             
 
+# Login page for logging in and storing the logged user
+function login_page():
+    print "=================== LOGIN PAGE ========================== "
+    print "1. Login"
+    print "2. Register"
+    choice = read input
+
+    if choice is "1":
+        # Prompting the user to login
+        print "Enter user email"
+        email_input = read input
+        print "Enter password"
+        password_input = read input
+        
+        if login_user(email_input, password_input):
+            current_user = email_input #Setting the logged in user for successfull login
+            return
+    if choice is "2":
+        while current_user is null:
+            #Prompting the user to register
+            name_input = read input
+            email_input = read input
+            password = read input
+            
+            if create_user(name_input, email_input, password_input):
+                current_user = email_input
+                return
+            
+
 # Handling adding new product
 function handle_add_product():
-    print " ===========ADD NEW PRODUCTS=========== "
+    print " =========== ADD NEW PRODUCTS =========== "
     name = read input("Enter Product Name: ")
     width = read input("Enter Width: ")
     height = read input("Enter Height: ")
@@ -50,4 +102,17 @@ function handle_add_product():
     brand = read input("Enter Brand: ")
 
     add_product(name, width, height, length, weight, color, brand)    
+
+
+# Main application loop
+function run_app():
+    while true:
+        if current_user is null:
+            login_page()
+        if current_user is not null:
+            store_menu()
+
+
+# Run the application
+run_app()
 

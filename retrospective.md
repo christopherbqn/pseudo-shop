@@ -7,7 +7,7 @@
 ## 1. How did you divide the work between you and your partner?
 _(Who worked on which features? How was the work assigned or negotiated?)_
 
-* **Student 1 or Christopher ** focused on **Feature 3: Product Management** and **Feature 4: Display Storefront**. These were grouped because displaying products naturally follows from managing them.
+* **Student 1 or Christopher** focused on **Feature 3: Product Management** and **Feature 4: Display Storefront**. These were grouped because displaying products naturally follows from managing them.
 * **Student 2 or Jerome** focused on **Feature 2: User Registration and Login** and **Feature 1: Filter Products by Attributes**. User management was independent, allowing early parallel work. Product filtering was assigned to Student 2 as it logically followed the product data structure and display established by Student 1. The main.pseudo file was contributed by both the students to implement each of their respective features, having student 1 finalize the main application flow.
 
 

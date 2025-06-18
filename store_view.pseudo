@@ -20,3 +20,49 @@ function display_products():
         print "\n-------------------------------"
     
     print "========== END LIST ==========="
+
+
+#Filtering Products
+
+function display_filtered_products():
+    print "========== PRODUCT FILTERING =========="
+    
+    # Getting user input for filter attributes
+    print "Enter attributes you want to filter by (type 'done' to finish):"
+    print "Available attributes: price, width, height, length, weight, color, brand"
+
+    filters = {}
+
+    while true:
+        print "\nEnter attribute name one at a time (or 'done'): "
+        attribute = read input
+
+        if attribute is "done":
+            break
+
+        if attribute is not in ["price", "width", "height", "length", "weight", "color", "brand"]:
+            print "Invalid attribute. Please choose a valid one."
+            continue
+
+        print "Enter desired value for " + attribute + ":"
+        value = read input
+        filters[attribute] = value
+
+    filtered_result = filter_products(filters)
+
+    # Displaying filtered products
+    
+    if filtered_result is empty:
+        print "\nNo products matched your filter."
+    else:
+
+        print "\n====== FILTERED PRODUCTS ======"
+        for each product in filtered_result:
+            print "-------------------------------"
+            print "Name     : " + product.name
+            print "Price    : " + product.price
+            print "Size     : " + product.width + "W x " + product.height + "H x " + product.length + "L"
+            print "Weight   : " + product.weight
+            print "Color    : " + product.color
+            print "Brand    : " + product.brand
+        print "-----------------------------------"

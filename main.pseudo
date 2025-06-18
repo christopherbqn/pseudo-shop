@@ -29,9 +29,6 @@ function store_menu():
         else:
             print "Invalid choice. Please try again."
 
-#For tracking the current logged_in 
-current_user = null
-
 # Login page for logging in and storing the logged user
 function login_page():
     print "=================== LOGIN PAGE ========================== "

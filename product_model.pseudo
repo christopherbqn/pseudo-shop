@@ -32,7 +32,7 @@ function filter_products(filters):
     for each product in product_list:
         match = true
         for each filter_key, filter_value in filters:
-            if product.get(filter_key) is not filter_value:
+            if product.has_key(filter_key) or product.get(filter_key) is not filter_value:
                 match = false
                 break
         if match is true:

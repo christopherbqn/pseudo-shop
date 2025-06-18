@@ -8,6 +8,7 @@ function display_products():
     if product_list is empty:
         print "No Products Available Yet"
     else:
+        print "       ALL AVAILABLE PRODUCTS      "
         for each product in product_list:
             print "-------------------------------"
             print "Name     : " + product.name
@@ -16,6 +17,6 @@ function display_products():
             print "Weight   : " + product.weight
             print "Color    : " + product.color
             print "Brand    : " + product.brand
-        print "-------------------------------"
+        print "\n-------------------------------"
     
     print "========== END LIST ==========="

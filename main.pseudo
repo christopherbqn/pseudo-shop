@@ -37,3 +37,17 @@ function login_page():
                 current_user = email_input
                 return
             
+
+# Handling adding new product
+function handle_add_product():
+    print " ===========ADD NEW PRODUCTS=========== "
+    name = read input("Enter Product Name: ")
+    width = read input("Enter Width: ")
+    height = read input("Enter Height: ")
+    length = read input("Enter Length: ")
+    weight = read input("Enter Weight: ")
+    color = read input("Enter Color: ")
+    brand = read input("Enter Brand: ")
+
+    add_product(name, width, height, length, weight, color, brand)    
+

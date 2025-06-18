@@ -25,3 +25,11 @@ function add_product(name, width, height, length, weight, color, brand):
     add new_product to product_list
     print "New Product Added: " + name
 
+#Funciton to return the products based on provided attributes
+#Parameter: filters(a dictionary where keys attributes and values are user's desired values)
+function filter_products(filters):
+    filtered_list = []
+    # Placeholder for filtering logic
+    return filtered_list
+
+
